@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       initialBinding: AppBindings(),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: ColorConstants.backgroundColor,
         colorScheme: const ColorScheme.light(
