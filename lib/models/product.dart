@@ -9,7 +9,7 @@ class Product {
   final int quantity;
   final double price;
   final String category;
-  final List ratings;
+  final List? ratings;
   Product({
     required this.id,
     required this.name,
@@ -18,7 +18,7 @@ class Product {
     required this.quantity,
     required this.price,
     required this.category,
-    required this.ratings,
+    this.ratings,
   });
 
   Map<String, dynamic> toMap() {
@@ -39,11 +39,17 @@ class Product {
       id: map['_id'] as String,
       name: map['name'] as String,
       description: map['description'] as String,
-      images: List<String>.from((map['images'] as List<String>)),
+      images: List<String>.from((map['images'])),
       quantity: map['quantity'] as int,
       price: map['price'] as double,
       category: map['category'] as String,
-      ratings: List.from((map['ratings'] as List)),
+      ratings: map['ratings'] != null
+          ? List<Map<String, dynamic>>.from(
+              (map['ratings']?.map(
+                (x) => x as Map<String, dynamic>,
+              )),
+            )
+          : null,
     );
   }
 
@@ -55,16 +61,37 @@ class Product {
 
 /*
 {
-    "_id": "6329da62612334a2fb7f3f45",
-    "name": "Beach products",
-    "description": "Beach products description",
-    "images": [
-      "https://res.cloudinary.com/dnqri4n2g/image/upload/v1663687265/Beach%20products/lkfphehvjw5llc7qlwhf.jpg"
-    ],
-    "quantity": 8,
-    "price": 12.3,
-    "category": "Fashion",
-    "__v": 1,
-    "ratings": []
-  },
+  "_id": "632aaa9f6ca9efdc872a17f7",
+  "name": "Fitness program",
+  "description": "Fitness program description",
+  "images": [
+    "https://res.cloudinary.com/dnqri4n2g/image/upload/v1663740575/Fitness%20program/lmqmmnv0pkbdaqjlmqn9.jpg"
+  ],
+  "quantity": 40,
+  "price": 999.99,
+  "category": "Essentials",
+  "__v": 14,
+  "ratings": [
+    {
+      "userId": "632757bf7523563609dbc95f",
+      "rating": 3.5,
+      "_id": "632abb4da85b014dc242bb68"
+    },
+    {
+      "userId": "632ace53fae8ab1eb6c19427",
+      "rating": 5,
+      "_id": "632d2210b6d24dff5294532d"
+    },
+    {
+      "userId": "632c81a8ac33888f0f047650",
+      "rating": 5,
+      "_id": "632e74fd19a73e24e9984ec0"
+    },
+    {
+      "userId": "632e9de5266a139d046aac24",
+      "rating": 5,
+      "_id": "632ea29b266a139d046aac60"
+    }
+  ]
+}
 */

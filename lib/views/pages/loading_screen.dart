@@ -6,7 +6,7 @@ import 'package:mystore/services/user_services.dart';
 import 'package:mystore/utils/loader.dart';
 
 import 'auth/signin_screen.dart';
-import 'home_page.dart';
+import 'home_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});
@@ -31,7 +31,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       return !userController.isLoading.value
           ? userController.user.value.token.isEmpty
               ? const SigninScreen()
-              : const HomePage()
+              : const HomeScreen()
           : Scaffold(
               body: Padding(
                 padding: const EdgeInsets.all(8),

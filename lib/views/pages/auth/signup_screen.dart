@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mystore/views/auth/signin_screen.dart';
+import 'package:mystore/views/pages/auth/signin_screen.dart';
 
-import '../../constants/color_constants.dart';
-import '../../services/user_services.dart';
-import '../../utils/custom_button.dart';
-import '../../utils/custom_textfield.dart';
+import 'package:mystore/constants/color_constants.dart';
+import 'package:mystore/services/user_services.dart';
+import 'package:mystore/utils/custom_button.dart';
+import 'package:mystore/utils/custom_textfield.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

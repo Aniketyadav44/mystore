@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mystore/constants/color_constants.dart';
 import 'package:mystore/controllers/user_controller.dart';
-import 'package:mystore/views/loading_screen.dart';
+import 'package:mystore/views/pages/loading_screen.dart';
 
 void main() {
   runApp(const MyApp());

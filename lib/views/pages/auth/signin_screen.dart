@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:mystore/services/user_services.dart';
 import 'package:mystore/utils/custom_button.dart';
 import 'package:mystore/utils/custom_textfield.dart';
-import 'package:mystore/views/auth/signup_screen.dart';
+import 'package:mystore/views/pages/auth/signup_screen.dart';
 
-import '../../constants/color_constants.dart';
+import 'package:mystore/constants/color_constants.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({super.key});

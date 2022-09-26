@@ -6,8 +6,8 @@ import 'package:mystore/constants/remote_constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:mystore/controllers/user_controller.dart';
 import 'package:mystore/utils/http_error_handle.dart';
-import 'package:mystore/views/auth/signin_screen.dart';
-import 'package:mystore/views/home_page.dart';
+import 'package:mystore/views/pages/auth/signin_screen.dart';
+import 'package:mystore/views/pages/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserServices {
@@ -83,7 +83,7 @@ class UserServices {
 
             await pref.setString('auth-token', jsonDecode(res.body)['token']);
 
-            Get.offAll(() => const HomePage());
+            Get.offAll(() => const HomeScreen());
           });
     } catch (e) {
       Get.snackbar(
